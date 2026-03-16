@@ -25,12 +25,12 @@ camera.rotation.x = -0.08751335700035043;
 camera.rotation.y = 0.2524313075800641;
 camera.rotation.z = 0.021909707661728214;
 
+const mtlLoader = new MTLLoader().setPath('3d/');
+const objLoader = new OBJLoader().setPath('3d/');
 async function loadModel(name) {
-    const mtlLoader = new MTLLoader().setPath('3d/');
     const materials = await mtlLoader.loadAsync(name + '.mtl');
     materials.preload();
 
-    const objLoader = new OBJLoader().setPath('3d/');
     objLoader.setMaterials(materials);
 
     return await objLoader.loadAsync(name + '.obj')
