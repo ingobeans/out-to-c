@@ -9,7 +9,6 @@ texture.wrapS = THREE.RepeatWrapping;
 texture.wrapT = THREE.RepeatWrapping;
 
 let width = window.innerWidth, height = window.innerHeight;
-let canvas = document.getElementById("c");
 
 // init
 
@@ -111,9 +110,6 @@ window.addEventListener("resize", () => {
     camera.height = height;
     camera.aspect = width / height
     camera.updateProjectionMatrix()
-
-    canvas.width = width + "px";
-    canvas.height = height + "px";
 
     renderer.setSize(width, height);
 });
