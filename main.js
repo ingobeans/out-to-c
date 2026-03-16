@@ -35,9 +35,9 @@ function vertexShader() {
     varying vec2 vUv;
 
     void main(){
-        vUv=position.xz*.5+.5;
+        vUv=position.xz*0.1+.5;
         vec3 c = position;
-        c.y += sin(time/600.0+position.x+position.z) * 0.05;
+        c.y += sin(time/1200.0+position.z) * 0.04;
 
         vec4 modelViewPosition = modelViewMatrix * vec4(c, 1.0);
         gl_Position = projectionMatrix * modelViewPosition;
@@ -75,7 +75,9 @@ async function loadModel(name, material) {
 let island = await loadModel("island");
 scene.add(island);
 let water = await loadModel("water", waterShader);
+
 water.position.y = 0.125;
+water.rotation.y += 3.14 / 4.0;
 scene.add(water);
 
 // lights :>
