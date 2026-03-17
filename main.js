@@ -16,7 +16,7 @@ const camera = new THREE.PerspectiveCamera(70, width / height, 0.01, 100);
 const scene = new THREE.Scene();
 
 // add fog to show perspective
-const color = 0x0;
+const color = 0;
 const near = 0.1;
 const far = 10;
 scene.fog = new THREE.Fog(color, near, far);
