@@ -36,6 +36,7 @@ h1 {
     display: block;
     width: 705px;
     max-width: 100%;
+    padding-top: 20px;
 }
 
 canvas {
