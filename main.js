@@ -8,7 +8,8 @@ const texture = await loader.loadAsync('3d/water2.JPG');
 texture.wrapS = THREE.RepeatWrapping;
 texture.wrapT = THREE.RepeatWrapping;
 
-let width = window.innerWidth, height = window.innerHeight;
+let width = window.innerWidth * window.devicePixelRatio;
+let height = window.innerHeight * window.devicePixelRatio;
 
 // init
 
@@ -126,8 +127,8 @@ function animate(time) {
 }
 
 window.addEventListener("resize", () => {
-    width = window.innerWidth;
-    height = window.innerHeight;
+    width = window.innerWidth * window.devicePixelRatio;
+    height = window.innerHeight * window.devicePixelRatio;
 
     camera.width = width;
     camera.height = height;
