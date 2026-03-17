@@ -14,7 +14,7 @@ body {
     background-image: url("3d/sky-top.png"), url("3d/sky.png");
     background-repeat: repeat-x;
     background-position: top, bottom;
-    background-size: auto, 100vh;
+    background-size: 67vh, 100vh;
 }
 
 * {
