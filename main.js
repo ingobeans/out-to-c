@@ -22,7 +22,7 @@ const far = 10;
 scene.fog = new THREE.Fog(color, near, far);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
-//const controls = new OrbitControls(camera, renderer.domElement);
+const controls = new OrbitControls(camera, renderer.domElement);
 let waterShader = new THREE.ShaderMaterial({
     uniforms: {
         buffer: { value: texture },
@@ -44,7 +44,7 @@ function vertexShader() {
     void main(){
         vUv=position.xz*0.1+.5;
         vec3 c = position;
-        c.y += sin(time/1200.0+position.z) * 0.04;
+        c.y += sin(time/1200.0+position.z+position.x) * 0.04;
         h=c.y;
 
         vec4 modelViewPosition = modelViewMatrix * vec4(c, 1.0);
@@ -65,6 +65,7 @@ function fragmentShader() {
         float value = (h)*1.3;
         vec2 movedUv = vUv;
         movedUv.y += sin(time/1000.0)/100.0;
+        movedUv.x += sin(time/1000.0)/100.0;
         vec4 texel=texture2D(buffer,movedUv);
         texel.rgb += vec3(value,value,value);
         gl_FragColor=texel;
@@ -95,7 +96,8 @@ scene.add(island);
 let water = await loadModel("water", waterShader);
 
 water.position.y = 0.125;
-water.rotation.y += 3.14 / 4.0;
+water.position.x = 5.5;
+water.position.z = -10.5;
 scene.add(water);
 
 // lights :>
@@ -108,15 +110,17 @@ renderer.setAnimationLoop(animate);
 document.body.appendChild(renderer.domElement);
 
 // set up default camera state
-camera.position.set(3.166388873055033, 0.3699988456823388, 2.4689986305881897);
+camera.position.set(3.890794575489123, 0.9752466284680337, 3.406702477655009);
 
 // set default camera rotation
-camera.rotation.x = -0.03829330330813131;
-camera.rotation.y = 0.10380205296085393;
-camera.rotation.z = 0.003969708842031102;
+camera.rotation.x = -0.06501676300811605;
+camera.rotation.y = 0.014735025041483576;
+camera.rotation.z = 0.0009593408193955247;
 
 function animate(time) {
     waterShader.uniforms["time"].value = time;
+    console.log(camera.position);
+    console.log(camera.rotation);
     //controls.update();
     renderer.render(scene, camera);
 }
