@@ -32,11 +32,13 @@ function vertexShader() {
     return `
     uniform float time;
     varying vec2 vUv;
+    varying float h;
 
     void main(){
         vUv=position.xz*0.1+.5;
         vec3 c = position;
         c.y += sin(time/1200.0+position.z) * 0.04;
+        h=c.y;
 
         vec4 modelViewPosition = modelViewMatrix * vec4(c, 1.0);
         gl_Position = projectionMatrix * modelViewPosition;
@@ -49,9 +51,15 @@ function fragmentShader() {
 
     uniform sampler2D buffer;
     varying vec2 vUv;
+    varying float h;
+    uniform float time;
 
     void main(){
-        vec4 texel=texture2D(buffer,vUv);
+        float value = (h)*1.3;
+        vec2 movedUv = vUv;
+        movedUv.y += time/1000.0/1000.0;
+        vec4 texel=texture2D(buffer,movedUv);
+        texel.rgb += vec3(value,value,value);
         gl_FragColor=texel;
     }
     `
