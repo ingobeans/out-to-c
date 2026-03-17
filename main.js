@@ -64,7 +64,7 @@ function fragmentShader() {
     void main(){
         float value = (h)*1.3;
         vec2 movedUv = vUv;
-        movedUv.y += time/1000.0/1000.0;
+        movedUv.y += sin(time/1000.0)/100.0;
         vec4 texel=texture2D(buffer,movedUv);
         texel.rgb += vec3(value,value,value);
         gl_FragColor=texel;
