@@ -33,7 +33,7 @@ let waterShader = new THREE.ShaderMaterial({
 });
 
 renderer.setSize(width, height);
-renderer.setClearColor(new THREE.Color(0x3DABFF))
+renderer.setClearColor(new THREE.Color(0x3DABFF), 0)
 
 function vertexShader() {
     return `
