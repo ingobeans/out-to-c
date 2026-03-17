@@ -71,8 +71,12 @@ async function loadModel(name, material) {
     const materials = await mtlLoader.loadAsync(name + '.mtl');
     materials.preload();
     if (material != undefined && material != null) {
-        console.log(material);
         materials.materials.Material = material;
+    }
+    // add transparency for bush material.
+    // ik this is hardcoded and all but im in a hurry to get this finished ok
+    if (materials.materials.Bush != null) {
+        materials.materials.Bush.transparent = true;
     }
     objLoader.setMaterials(materials);
 
@@ -88,21 +92,21 @@ water.rotation.y += 3.14 / 4.0;
 scene.add(water);
 
 // lights :>
-const ambientLight = new THREE.AmbientLight(0xffffff, 5);
+const ambientLight = new THREE.AmbientLight(0xffffff, 3);
 scene.add(ambientLight);
-const hemiLight = new THREE.HemisphereLight(0x0000ff, 0x00ff00, 0.6);
-scene.add(hemiLight);
+//const hemiLight = new THREE.HemisphereLight(0x0000ff, 0x00ff00, 0.6);
+//scene.add(hemiLight);
 
 renderer.setAnimationLoop(animate);
 document.body.appendChild(renderer.domElement);
 
 // set up default camera state
-camera.position.set(2.2, 0.8152618946686154, 1.9230511497018643);
+camera.position.set(3.166388873055033, 0.3699988456823388, 2.4689986305881897);
 
 // set default camera rotation
-camera.rotation.x = -0.08751335700035043;
-camera.rotation.y = 0.2524313075800641;
-camera.rotation.z = 0.021909707661728214;
+camera.rotation.x = -0.03829330330813131;
+camera.rotation.y = 0.10380205296085393;
+camera.rotation.z = 0.003969708842031102;
 
 function animate(time) {
     waterShader.uniforms["time"].value = time;
