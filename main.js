@@ -21,7 +21,7 @@ const near = 0.1;
 const far = 10;
 scene.fog = new THREE.Fog(color, near, far);
 
-const renderer = new THREE.WebGLRenderer({ antialias: false });
+const renderer = new THREE.WebGLRenderer({ antialias: true });
 //const controls = new OrbitControls(camera, renderer.domElement);
 let waterShader = new THREE.ShaderMaterial({
     uniforms: {
