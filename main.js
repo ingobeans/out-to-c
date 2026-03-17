@@ -8,6 +8,9 @@ const texture = await loader.loadAsync('3d/water2.JPG');
 texture.wrapS = THREE.RepeatWrapping;
 texture.wrapT = THREE.RepeatWrapping;
 
+// texture.magFilter = THREE.NearestFilter;
+// texture.minFilter = THREE.NearestFilter;
+
 let width = window.innerWidth * window.devicePixelRatio;
 let height = window.innerHeight * window.devicePixelRatio;
 
@@ -91,6 +94,12 @@ async function loadModel(name, material) {
     if (materials.materials.Bush != null) {
         materials.materials.Bush.transparent = true;
         materials.materials.Ship.transparent = true;
+    }
+    for (let m of Object.keys(materials.materials)) {
+        console.log(materials.materials[m]);
+        if (materials.materials[m].map == undefined || m == "Ship") { continue }
+        materials.materials[m].map.magFilter = THREE.NearestFilter;
+        materials.materials[m].map.minFilter = THREE.NearestFilter;
     }
     objLoader.setMaterials(materials);
 
