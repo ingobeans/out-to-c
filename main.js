@@ -86,10 +86,11 @@ async function loadModel(name, material) {
     if (material != undefined && material != null) {
         materials.materials.Material = material;
     }
-    // add transparency for bush material.
+    // add transparency for bush and ship material.
     // ik this is hardcoded and all but im in a hurry to get this finished ok
     if (materials.materials.Bush != null) {
         materials.materials.Bush.transparent = true;
+        materials.materials.Ship.transparent = true;
     }
     objLoader.setMaterials(materials);
 
@@ -97,6 +98,13 @@ async function loadModel(name, material) {
 }
 
 let island = await loadModel("island");
+let ship;
+for (let child of island.children) {
+    if (child.name == "Ship") {
+        ship = child;
+        console.log(ship);
+    }
+}
 scene.add(island);
 let water = await loadModel("water", waterShader);
 
@@ -126,6 +134,13 @@ camera.rotation.z = 0.0009593408193955247;
 
 function animate(time) {
     waterShader.uniforms["time"].value = time;
+
+
+    let relPosition = water.position;
+    // PI / 16 is subtracted to make it a bit delayed compared to the water
+    // to give an effect of having mass
+    ship.position.y = Math.sin(time / 1200.0 + relPosition.z + relPosition.x - Math.PI / 16) * 0.04;
+
     //controls.update();
     renderer.render(scene, camera);
 }
