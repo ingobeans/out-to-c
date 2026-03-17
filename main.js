@@ -23,7 +23,7 @@ const far = 10;
 scene.fog = new THREE.Fog(color, near, far);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
-const controls = new OrbitControls(camera, renderer.domElement);
+//const controls = new OrbitControls(camera, renderer.domElement);
 let waterShader = new THREE.ShaderMaterial({
     uniforms: {
         buffer: { value: texture },
@@ -32,6 +32,10 @@ let waterShader = new THREE.ShaderMaterial({
     vertexShader: vertexShader(),
     fragmentShader: fragmentShader()
 });
+
+function getCameraOffset(aspect) {
+    return 0.9639917695473 * aspect - 1.9753086419753;
+}
 
 renderer.setSize(width, height);
 renderer.setClearColor(new THREE.Color(0x3DABFF), 0)
@@ -111,17 +115,17 @@ renderer.setAnimationLoop(animate);
 document.body.appendChild(renderer.domElement);
 
 // set up default camera state
-camera.position.set(3.890794575489123, 0.9752466284680337, 3.406702477655009);
+let cameraStartX = 3.890794575489123;
+camera.position.set(cameraStartX + getCameraOffset(width / height), 0.9752466284680337, 3.406702477655009);
 
 // set default camera rotation
 camera.rotation.x = -0.06501676300811605;
 camera.rotation.y = 0.014735025041483576;
 camera.rotation.z = 0.0009593408193955247;
 
+
 function animate(time) {
     waterShader.uniforms["time"].value = time;
-    console.log(camera.position);
-    console.log(camera.rotation);
     //controls.update();
     renderer.render(scene, camera);
 }
@@ -133,7 +137,9 @@ window.addEventListener("resize", () => {
     camera.width = width;
     camera.height = height;
     camera.aspect = width / height
-    camera.updateProjectionMatrix()
+    camera.updateProjectionMatrix();
+
+    camera.position.x = cameraStartX + getCameraOffset(width / height);
 
     renderer.setSize(width, height);
 });
