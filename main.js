@@ -14,7 +14,14 @@ let width = window.innerWidth, height = window.innerHeight;
 
 const camera = new THREE.PerspectiveCamera(70, width / height, 0.01, 100);
 const scene = new THREE.Scene();
-const renderer = new THREE.WebGLRenderer({ antialias: true });
+
+// add fog to show perspective
+const color = 0x0;
+const near = 0.1;
+const far = 10;
+scene.fog = new THREE.Fog(color, near, far);
+
+const renderer = new THREE.WebGLRenderer({ antialias: false });
 //const controls = new OrbitControls(camera, renderer.domElement);
 let waterShader = new THREE.ShaderMaterial({
     uniforms: {
