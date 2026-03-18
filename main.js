@@ -96,7 +96,6 @@ async function loadModel(name, material) {
         materials.materials.Ship.transparent = true;
     }
     for (let m of Object.keys(materials.materials)) {
-        console.log(materials.materials[m]);
         if (materials.materials[m].map == undefined || m == "Ship") { continue }
         materials.materials[m].map.magFilter = THREE.NearestFilter;
         materials.materials[m].map.minFilter = THREE.NearestFilter;
@@ -111,7 +110,6 @@ let ship;
 for (let child of island.children) {
     if (child.name == "Ship") {
         ship = child;
-        console.log(ship);
     }
 }
 scene.add(island);
