@@ -78,13 +78,51 @@ h1 {
     padding-top: 20px;
 }
 
-#map {
+.map-holder {
     margin-left: auto;
     margin-right: auto;
     width: 800px;
     max-width: 100%;
+}
+
+.map-marker {
+    position: relative;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+}
+
+#map-marker-1 {
+    left: 280px;
+    top: 76px;
+}
+
+#map-marker-2 {
+    left: 503px;
+    top: 352px;
+}
+
+#map-marker-3 {
+    left: 618px;
+    top: 131px;
+}
+
+#map-marker-3>div {
+    width: 167px;
+    height: 115px;
+}
+
+.map-marker>div {
+    width: 85px;
+    height: 73px;
+    /* background-color: rgba(255, 0, 0, 0.178); */
+}
+
+#map {
+    width: 100%;
     display: block;
 }
+
 
 .centered {
     max-width: 995px;
