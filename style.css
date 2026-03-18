@@ -21,6 +21,15 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.card-holder {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-holder>img {
+    width: 260px;
+}
+
 pre {
     font-family: Courier New;
 }
