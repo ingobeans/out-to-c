@@ -30,6 +30,17 @@ h1 {
     color: white;
 }
 
+#hackclub-flag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: hue-rotate(130deg);
+}
+
+#hackclub-flag>img {
+    width: 175px;
+}
+
 #logo {
     margin-left: auto;
     margin-right: auto;
