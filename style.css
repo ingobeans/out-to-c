@@ -96,6 +96,28 @@ h1 {
     cursor: pointer;
 }
 
+.map-marker>div>div {
+    display: none;
+    width: 300px;
+    height: 200px;
+    background-color: #6e4c30;
+    margin-left: -112px;
+}
+
+.map-marker>div:hover>div {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .map-marker>div>div {
+        margin-left: -135px;
+    }
+
+    #map-marker-3>div>div {
+        margin-left: -195px;
+    }
+}
+
 #map-marker-1 {
     left: calc(var(--w_factor) * 280);
     top: calc(var(--w_factor) * 76);
@@ -119,7 +141,7 @@ h1 {
 .map-marker>div {
     width: calc(var(--w_factor) * 85);
     height: calc(var(--w_factor) * 73);
-    background-color: rgba(255, 255, 255, 0.178);
+    /* background-color: rgba(255, 255, 255, 0.178); */
 }
 
 #map {
