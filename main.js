@@ -122,6 +122,8 @@ water.position.x = 5.5;
 water.position.z = -10.5;
 scene.add(water);
 
+globalThis.camera = camera;
+
 // lights :>
 const ambientLight = new THREE.AmbientLight(0xffffff, 3);
 scene.add(ambientLight);
