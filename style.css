@@ -98,10 +98,12 @@ h1 {
 
 .map-marker>div>div {
     display: none;
-    width: 300px;
-    height: 200px;
-    background-color: #6e4c30;
     margin-left: -112px;
+    transform: translateY(-140px);
+}
+
+.map-marker>div>div>img {
+    width: 300px;
 }
 
 .map-marker>div:hover>div {
