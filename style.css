@@ -33,6 +33,7 @@ h1 {
     position: absolute;
     top: 0;
     left: 10px;
+    z-index: 10;
     filter: hue-rotate(255deg) saturate(1.5);
 }
 
