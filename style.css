@@ -66,3 +66,11 @@ canvas {
     height: 100vh !important;
     filter: drop-shadow(0px 10px white);
 }
+
+.ocean-gradient {
+    position: absolute;
+    height: 200vh;
+    width: 100vw;
+    z-index: -3;
+    background: linear-gradient(180deg, rgb(5, 130, 233) 00%, rgb(0, 114, 208) 50%, rgb(11, 0, 89) 60%, rgb(0, 1, 52) 70%, rgb(0, 0, 0) 100%)
+}
