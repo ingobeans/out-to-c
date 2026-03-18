@@ -37,6 +37,7 @@ pre {
 
 h1 {
     text-align: center;
+    margin: 0;
 }
 
 #hackclub-flag {
@@ -73,12 +74,18 @@ h1 {
     padding-top: 20px;
 }
 
-.container {
+.centered {
     max-width: 995px;
-    width: 100%;
+    width: calc(100% - 10px);
     margin-left: auto;
     margin-right: auto;
+}
+
+.container {
+    padding: 5px;
     color: white;
+    background-color: #0b0059;
+    padding-bottom: 200px;
 }
 
 canvas {
@@ -92,10 +99,15 @@ canvas {
     filter: drop-shadow(0px 10px white);
 }
 
+.spacer {
+    height: calc(100vh + 160px);
+}
+
 .ocean-gradient {
     position: absolute;
-    height: 200vh;
+    /* let height be a bit higher than the spacer, to ensure no gap */
+    height: calc(100vh + 190px);
     width: 100vw;
     z-index: -3;
-    background: linear-gradient(180deg, rgb(5, 130, 233) 00%, rgb(0, 114, 208) 50%, rgb(11, 0, 89) 60%);
+    background: linear-gradient(180deg, rgb(5, 130, 233) 00%, rgb(0, 114, 208) 80%, rgb(11, 0, 89) 96%);
 }
