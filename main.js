@@ -16,7 +16,7 @@ let height = window.innerHeight * window.devicePixelRatio;
 
 // init
 
-const camera = new THREE.PerspectiveCamera(70, width / height, 0.01, 100);
+const camera = new THREE.PerspectiveCamera(70, width / height, 1.3, 100);
 const scene = new THREE.Scene();
 
 // add fog to show perspective
