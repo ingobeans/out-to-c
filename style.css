@@ -33,12 +33,14 @@ h1 {
 #hackclub-flag {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 10px;
     filter: hue-rotate(255deg) saturate(1.5);
 }
 
 #hackclub-flag:hover {
     filter: hue-rotate(215deg) saturate(1.5);
+    scale: 1.2;
+    left: 20px;
 }
 
 #hackclub-flag>img {
