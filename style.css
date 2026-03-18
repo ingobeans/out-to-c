@@ -78,6 +78,14 @@ h1 {
     padding-top: 20px;
 }
 
+#map {
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    max-width: 100%;
+    display: block;
+}
+
 .centered {
     max-width: 995px;
     width: calc(100% - 10px);
