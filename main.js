@@ -11,8 +11,8 @@ texture.wrapT = THREE.RepeatWrapping;
 // texture.magFilter = THREE.NearestFilter;
 // texture.minFilter = THREE.NearestFilter;
 
-let width = window.innerWidth * window.devicePixelRatio;
-let height = window.innerHeight * window.devicePixelRatio;
+let width = document.documentElement.clientWidth * window.devicePixelRatio;
+let height = document.documentElement.clientHeight * window.devicePixelRatio;
 
 // init
 
@@ -155,8 +155,8 @@ function animate(time) {
 }
 
 window.addEventListener("resize", () => {
-    width = window.innerWidth * window.devicePixelRatio;
-    height = window.innerHeight * window.devicePixelRatio;
+    width = document.documentElement.clientWidth * window.devicePixelRatio;
+    height = document.documentElement.clientHeight * window.devicePixelRatio;
 
     camera.width = width;
     camera.height = height;
