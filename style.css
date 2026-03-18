@@ -83,6 +83,7 @@ h1 {
     margin-right: auto;
     width: 800px;
     max-width: 100%;
+    --w_factor: calc(min(100vw - 20px, 800px) / 800);
 }
 
 .map-marker {
@@ -93,29 +94,29 @@ h1 {
 }
 
 #map-marker-1 {
-    left: 280px;
-    top: 76px;
+    left: calc(var(--w_factor) * 280);
+    top: calc(var(--w_factor) * 76);
 }
 
 #map-marker-2 {
-    left: 503px;
-    top: 352px;
+    left: calc(var(--w_factor) * 503);
+    top: calc(var(--w_factor) * 352);
 }
 
 #map-marker-3 {
-    left: 618px;
-    top: 131px;
+    left: calc(var(--w_factor) * 618);
+    top: calc(var(--w_factor) * 131);
 }
 
 #map-marker-3>div {
-    width: 167px;
-    height: 115px;
+    width: calc(var(--w_factor) * 167);
+    height: calc(var(--w_factor) * 115);
 }
 
 .map-marker>div {
-    width: 85px;
-    height: 73px;
-    /* background-color: rgba(255, 0, 0, 0.178); */
+    width: calc(var(--w_factor) * 85);
+    height: calc(var(--w_factor) * 73);
+    background-color: rgba(255, 255, 255, 0.178);
 }
 
 #map {
