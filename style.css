@@ -132,7 +132,12 @@ h1 {
     display: block;
 }
 
-@media (max-width: 768px) {
+#map-marker-3>div>div {
+    margin-left: -75px;
+    transform: translateY(-100px);
+}
+
+@media (max-width: 935px) {
     .map-marker>div>div {
         margin-left: -135px;
     }
@@ -149,7 +154,7 @@ h1 {
 
 #map-marker-2 {
     left: calc(var(--w_factor) * 503);
-    top: calc(var(--w_factor) * 352);
+    top: calc(var(--w_factor) * 346);
 }
 
 #map-marker-3 {
