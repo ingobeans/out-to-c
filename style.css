@@ -127,6 +127,42 @@ h1 {
     padding: 5px;
 }
 
+.spread {
+    max-width: 100%;
+    height: 120px;
+    position: relative;
+}
+
+.spread>img {
+    width: 110px;
+    background-color: #4d3533;
+    border: 5px solid #10121C;
+    position: absolute;
+    top: 0;
+    transform: translateY(5px);
+}
+
+.spread>img:hover {
+    scale: 1.2;
+    z-index: 3;
+}
+
+.spread>img:nth-child(1) {
+    left: calc(50% - 110px / 2);
+    z-index: 1;
+    transform: translateY(0);
+}
+
+.spread>img:nth-child(2) {
+    left: 0;
+    rotate: -5deg;
+}
+
+.spread>img:nth-child(3) {
+    right: 0;
+    rotate: 5deg;
+}
+
 
 .map-marker>div:hover>div {
     display: block;
