@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import { MTLLoader } from 'three/addons/loaders/MTLLoader.js';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+// import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 const loader = new THREE.TextureLoader();
 const texture = await loader.loadAsync('3d/water2.JPG');
