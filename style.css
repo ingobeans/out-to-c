@@ -113,18 +113,20 @@ h1 {
     position: relative;
     width: 0;
     height: 0;
-    cursor: pointer;
 }
 
 .map-marker>div>div {
     display: none;
+    width: 300px;
+    height: 200px;
     margin-left: -112px;
     transform: translateY(-140px);
+    background-color: #6e4c30;
+    border-radius: 10px;
+    border: 5px solid #9c6a3d;
+    padding: 5px;
 }
 
-.map-marker>div>div>img {
-    width: 300px;
-}
 
 .map-marker>div:hover>div {
     display: block;
