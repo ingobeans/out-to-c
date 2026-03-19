@@ -17,8 +17,28 @@ body {
     background-size: 67vh, 100vh;
 }
 
+@font-face {
+    font-family: inknut-antiqua;
+    src: url(InknutAntiqua/InknutAntiqua-Regular.ttf);
+
+    /* from: https://gomakethings.com/better-font-loading-with-the-font-displayswap-property/
+    basically, without this, firefox (not chrome i think), will wait for the font to load before rendering the text,
+    rather than using the fallback font, which leaves big empty blocks for a second or so on first load.
+    */
+    font-display: swap;
+}
+
+@font-face {
+    font-family: inknut-antiqua;
+    src: url(InknutAntiqua/InknutAntiqua-Bold.ttf);
+    font-weight: bold;
+    font-display: swap;
+}
+
 * {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: inknut-antiqua;
+    line-height: 36px;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
 }
 
 .card-holder {
