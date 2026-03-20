@@ -4,7 +4,7 @@ a draft YSWS where you sail out to sea on the hunt for treasure, by coding C.
 
 <img src="banner.png" width=450>
 
-check it out! [https://ingobeans.github.io/out-to-c/](https://ingobeans.github.io/out-to-c/)
+check it out! [https://out-to-c.dino.icu/](https://out-to-c.dino.icu/)
 
 ---
 
