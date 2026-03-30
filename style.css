@@ -132,6 +132,12 @@ h1 {
     padding-top: 20px;
 }
 
+@media (max-width: 968px) {
+    #logo {
+        padding-top: 105px;
+    }
+}
+
 .map-holder {
     margin-left: auto;
     margin-right: auto;
