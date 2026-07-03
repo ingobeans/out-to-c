@@ -1,6 +1,6 @@
 # Out to C
 
-a draft YSWS where you sail out to sea on the hunt for treasure, by coding C. 
+an upcoming YSWS where you sail out to sea on the hunt for treasure, by coding C. 
 
 <img src="banner.png" width=450>
 
@@ -8,7 +8,7 @@ check it out! [https://out-to-c.dino.icu/](https://out-to-c.dino.icu/)
 
 ---
 
-this repo is currently just the homepage. if this YSWS is to be actualized, it would probably be a Ruby on Rails backend with Hackclub OpenID auth.
+this repo is currently just the homepage. the WIP backend is at [out-to-c-server](https://github.com/ingobeans/out-to-c-server)
 
 ## Building
 
