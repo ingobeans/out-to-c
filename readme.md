@@ -12,6 +12,8 @@ this repo is currently just the homepage. the WIP backend is at [out-to-c-server
 
 built with plain html/css + ThreeJS for the 3D background. for the next version, I will probably replace ThreeJS with Rust WebGL since I'm pretty sure it loads faster.
 
+no ai <3
+
 ## Building
 
 all js dependencies can be bundled in to a single minified js file. 
